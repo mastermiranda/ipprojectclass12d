@@ -39,7 +39,7 @@ def histogram():
     df=pd.read_csv(r'C:\Users\user\Documents\cars.csv')
     Co=df["Car"]
     Net=df["Net Sales (in Million $)"]
-    print(tabulate.tabulate(df,headers=df.columns,tablefmt='double_outline'))
+    print(df)
     plt.hist(Co,bins=len(Co),weights=Net,edgecolor='red')
     plt.title("Net Sales of Various Company During the Year 2020-24")
     plt.show()
@@ -47,7 +47,7 @@ def linechart():
     df=pd.read_csv(r'C:\Users\user\Documents\cars.csv')
     Co=df["Car"]
     Net=df["Net Sales (in Million $)"]
-    print(tabulate.tabulate(df,headers=df.columns,tablefmt='double_outline'))
+    print(df)
     plt.plot(Co)
     plt.title("Net Sales of Various Company During the Year 2020-24")
     plt.show()
@@ -55,7 +55,7 @@ def bar_chart():
     df=pd.read_csv(r'C:\Users\user\Documents\cars.csv')
     Co=df["Car"]
     Net=df["Net Sales (in Million $)"]
-    print(tabulate.tabulate(df,headers=df.columns,tablefmt='double_outline'))
+    print(df)
     index=np.arange(len(Co))
     plt.bar(Co,Net)
     plt.xlabel('Car',fontsize=4)
@@ -82,7 +82,7 @@ def manipulation():
         if option=="1":
             print("DataFrame Before Inserting a New Row")
             df=pd.read_csv(r'C:\Users\user\Documents\cars.csv')
-            print(tabulate.tabulate(df,headers=df.columns,tablefmt='fancy_grid'))
+            print(df)
             lst=[]
             columnname=df.columns
             for k in range(len(columnname)):
@@ -96,7 +96,7 @@ def manipulation():
                 print(df)
         elif option=="2":
             df=pd.read_csv(r'C:\Users\user\Documents\cars.csv')
-            print(tabulate.tabulate(df,headers=df.columns,tablefmt='fancy_grid'))
+            print(df)
             i=input("Enter the S.NO to be Deleted: ")
             loc=df[(df.ID==i)].index
             df.drop(loc,inplace=True,axis=0)
@@ -105,7 +105,7 @@ def manipulation():
             print(df)
         elif option=="3":
             df=pd.read_csv(r'C:\Users\user\Documents\cars.csv')
-            print(tabulate.tabulate(df,headers=df.columns,tablefmt='fancy_grid'))
+            print(df)
             column=input("Enter the Column Name: ")
             l=len(df)
             lst=[]
@@ -115,15 +115,15 @@ def manipulation():
             df[column]=pd.Series(lst)
             df.to_csv(r'C:\Users\user\Documents\cars.csv',encoding='utf-8',index=False,header=True)
             df=pd.read_csv(r'C:\Users\user\Documents\cars.csv')
-            print(tabulate(df,headers=df.columns,tablefmt='fancy_grid'))
+            print(df)
         elif option=="4":
             df=pd.read_csv(r'C:\Users\user\Documents\cars.csv')
-            print(tabulate.tabulate(df,headers=df.columns,tablefmt='fancy_grid'))
+            print(df)
             i=input("Enter the Column Name to be Deleted: ")
             df.drop(i,inplace=True,axis=1)
             df.to_csv(r'C:\Users\user\Documents\cars.csv',encoding='utf-8',index=False,header=True)
             df=pd.read_csv(r'C:\Users\user\Documents\cars.csv')
-            print(tabulate.tabulate(df,headers=df.columns,tablefmt='fancy_grid'))
+            print(df)
         elif option=="5":
             chance1=input("Do you Really want to Exit [y/n]? ")
             if chance1=='y' or chance1=='Y':
